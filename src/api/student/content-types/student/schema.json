@@ -1,0 +1,243 @@
+{
+  "kind": "collectionType",
+  "collectionName": "students",
+  "info": {
+    "singularName": "student",
+    "pluralName": "students",
+    "displayName": "Student",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "studentName": {
+      "type": "string"
+    },
+    "admission_date": {
+      "type": "date",
+      "default": "2024-10-28"
+    },
+    "course": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::course.course",
+      "inversedBy": "student"
+    },
+    "stream": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::stream.stream"
+    },
+    "semester": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::semester.semester",
+      "inversedBy": "students"
+    },
+    "fee_status": {
+      "type": "enumeration",
+      "enum": [
+        "Paid",
+        "Pending",
+        "Overdue"
+      ]
+    },
+    "document_status": {
+      "type": "enumeration",
+      "enum": [
+        "Verified",
+        "Pending",
+        "Rejected"
+      ]
+    },
+    "fatherName": {
+      "type": "string"
+    },
+    "motherName": {
+      "type": "string"
+    },
+    "dateOfBirth": {
+      "type": "date"
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "Male",
+        "Female",
+        "Other"
+      ]
+    },
+    "category": {
+      "type": "string"
+    },
+    "aadhaarNumber": {
+      "type": "biginteger"
+    },
+    "passportNo": {
+      "type": "string"
+    },
+    "isEmployed": {
+      "type": "boolean"
+    },
+    "employerName": {
+      "type": "string"
+    },
+    "designation": {
+      "type": "string"
+    },
+    "contactNumber": {
+      "type": "biginteger"
+    },
+    "emailAddress": {
+      "type": "email"
+    },
+    "fathersContactNo": {
+      "type": "biginteger"
+    },
+    "mothersContactNo": {
+      "type": "biginteger"
+    },
+    "country": {
+      "type": "string"
+    },
+    "nationality": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "district": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    },
+    "pinCode": {
+      "type": "string"
+    },
+    "examSecondaryYearOfPassing": {
+      "type": "date"
+    },
+    "examSecondaryBoardUniversity": {
+      "type": "text"
+    },
+    "examSecondaryPercentage": {
+      "type": "string"
+    },
+    "examSecondarySubjects": {
+      "type": "string"
+    },
+    "examSrSecondaryYearOfPassing": {
+      "type": "date"
+    },
+    "examSrSecondaryBoardUniversity": {
+      "type": "text"
+    },
+    "examSrSecondaryPercentage": {
+      "type": "string"
+    },
+    "examSrSecondarySubjects": {
+      "type": "string"
+    },
+    "examGraduationYearOfPassing": {
+      "type": "date"
+    },
+    "examGraduationBoardUniversity": {
+      "type": "string"
+    },
+    "examGraduationPercentage": {
+      "type": "string"
+    },
+    "examGraduationSubjects": {
+      "type": "string"
+    },
+    "examPostGraduationYearOfPassing": {
+      "type": "date"
+    },
+    "examPostGraduationBoardUniversity": {
+      "type": "string"
+    },
+    "examPostGraduationPercentage": {
+      "type": "string"
+    },
+    "examPostGraduationSubjects": {
+      "type": "string"
+    },
+    "examOthersYearOfPassing": {
+      "type": "date"
+    },
+    "examOthersBoardUniversity": {
+      "type": "string"
+    },
+    "examOthersPercentage": {
+      "type": "string"
+    },
+    "examOthersSubjects": {
+      "type": "string"
+    },
+    "session": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::session.session",
+      "inversedBy": "students"
+    },
+    "modeOfStudy": {
+      "type": "enumeration",
+      "enum": [
+        "Regular",
+        "Distance"
+      ]
+    },
+    "admissionType": {
+      "type": "enumeration",
+      "enum": [
+        "Normal",
+        "Lateral Entry",
+        "Migrated"
+      ]
+    },
+    "hostelFacility": {
+      "type": "boolean"
+    },
+    "registrationFee": {
+      "type": "biginteger"
+    },
+    "entranceFee": {
+      "type": "biginteger"
+    },
+    "enrollmentFee": {
+      "type": "biginteger"
+    },
+    "tuitionFee": {
+      "type": "biginteger"
+    },
+    "universityDevelopmentFee": {
+      "type": "biginteger"
+    },
+    "hostelFee": {
+      "type": "biginteger"
+    },
+    "lateFee": {
+      "type": "biginteger"
+    },
+    "totalDeposit": {
+      "type": "biginteger"
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "studentOf": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "students"
+    }
+  }
+}

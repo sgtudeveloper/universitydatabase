@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_shared_sessioncodes",
+  "info": {
+    "displayName": "sessioncode"
+  },
+  "options": {},
+  "attributes": {
+    "session": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "courses",
+  "info": {
+    "singularName": "course",
+    "pluralName": "courses",
+    "displayName": "Course",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "course_name": {
+      "type": "string"
+    },
+    "streams": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::stream.stream",
+      "mappedBy": "course"
+    },
+    "student": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::student.student",
+      "mappedBy": "course"
+    }
+  }
+}

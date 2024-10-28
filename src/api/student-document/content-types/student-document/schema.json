@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "student_documents",
+  "info": {
+    "singularName": "student-document",
+    "pluralName": "student-documents",
+    "displayName": "Student Document",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "student": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::student.student"
+    }
+  }
+}
